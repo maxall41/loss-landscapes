@@ -226,10 +226,10 @@ class ModelParameters:
                 self.parameters[l] *= (ref_point.parameters[l].norm(order) / self.parameters[l].norm(order))
             # normalize two-dimensional weight vectors
             for f in range(len(self.parameters[l])):
-                normv = (self.filter_norm((l, f), order)
+                normv = (self.filter_norm((l, f), order))
                 if normv == 0:
                     normv = 1
-                self.parameters[l][f] *= ref_point.filter_norm((l, f), order) / normv)
+                self.parameters[l][f] *= ref_point.filter_norm((l, f), order) / normv
 
     def model_norm(self, order=2) -> float:
         """
